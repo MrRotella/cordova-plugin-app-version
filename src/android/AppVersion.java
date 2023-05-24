@@ -25,7 +25,7 @@ public class AppVersion extends CordovaPlugin {
       
       if (android.os.Build.VERSION.SDK_INT >= android.os.Build.VERSION_CODES.TIRAMISU) {
         appInfo = packageManager.getApplicationInfo(packageName, PackageManager.ApplicationInfoFlags.of(0));
-        packageInfo = packageManager.getPackageInfo(packageName, PackageManager.ApplicationInfoFlags.of(0));
+        packageInfo = packageManager.getPackageInfo(packageName, PackageManager.PackageInfoFlags.of(0));
       } else {
         appInfo = packageManager.getApplicationInfo(packageName, PackageManager.GET_META_DATA);
         // appInfo = packageManager.getApplicationInfo(packageName, 0);
