@@ -1,13 +1,13 @@
 {
   "name": "cordova-plugin-app-version",
-  "version": "0.1.14",
-  "description": "Cordova plugin to return the version number of the current app",
+  "version": "1.0.0",
+  "description": "Cordova plugin to return the version number of the current app (ONLY ANDROID)",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/sampart/cordova-plugin-app-version.git"
+    "url": "git+https://github.com/MrRotella/cordova-plugin-app-version.git"
   },
   "keywords": [
     "cordova",
@@ -17,10 +17,13 @@
     "appversion",
     "plugin"
   ],
-  "author": "whiteoctober",
+  "author": {
+    "name": "MrRotella",
+    "url": "https://github.com/MrRotella/"
+  },
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/sampart/cordova-plugin-app-version/issues"
+    "url": "https://github.com/MrRotella/cordova-plugin-app-version/issues"
   },
-  "homepage": "https://github.com/sampart/cordova-plugin-app-version#readme"
+  "homepage": "https://github.com/MrRotella/cordova-plugin-app-version#readme"
 }

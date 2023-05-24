@@ -1,4 +1,4 @@
-package uk.co.whiteoctober.cordova;
+package it.federico.rota.cordova;
 
 import org.apache.cordova.CordovaPlugin;
 import org.apache.cordova.CallbackContext;
@@ -9,6 +9,8 @@ import org.json.JSONObject;
 import android.content.pm.ApplicationInfo;
 import android.content.pm.PackageManager.NameNotFoundException;
 import android.content.pm.PackageManager;
+
+import android.os.Build;
 
 public class AppVersion extends CordovaPlugin {
   @Override
@@ -32,7 +34,12 @@ public class AppVersion extends CordovaPlugin {
       }
       if (action.equals("getVersionCode")) {
         PackageManager packageManager = this.cordova.getActivity().getPackageManager();
-        callbackContext.success(packageManager.getPackageInfo(this.cordova.getActivity().getPackageName(), 0).versionCode);
+        if(android.os.Build.VERSION.SDK_INT>=28) {
+          long longVersionCode = packageManager.getPackageInfo(this.cordova.getActivity().getPackageName(), 0).getLongVersionCode();
+          callbackContext.success((int)longVersionCode);
+        } else {
+          callbackContext.success(packageManager.getPackageInfo(this.cordova.getActivity().getPackageName(), 0).versionCode);
+        }
       return true;
       }
       return false;
